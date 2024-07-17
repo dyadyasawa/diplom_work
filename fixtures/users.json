@@ -1,0 +1,82 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$aZitZR7CKJN3NPpXsblruR$vau9cuPOSeIfptWIY8o6wKn3uBs9YpOISTWMBFxnS9g=",
+      "last_login": "2024-07-17T12:56:35.646Z",
+      "is_superuser": true,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2024-07-17T12:53:01.513Z",
+      "email": "admin@example.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$Mm598KokvkagKJsyIzUc2b$ur/U5DQjg96QM204U2OI/xuR4XVh6KIquh/yloOpxpE=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-17T12:53:48.395Z",
+      "email": "ivan@example.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$uHt8gLQQQbXsEgvgXbEXqU$+vXpDi1uTKgILn6jE/SpVJEYQNfr7qSe0y3zJPwLmjU=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-17T12:54:02.510Z",
+      "email": "stean@example.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$bgaL0dZ4sknPLK6DE8rqD0$3jUFOsfB3jkSmVfz+3C6TmpJp3rDfFw0QVWke0dhD/E=",
+      "last_login": null,
+      "is_superuser": false,
+      "first_name": "",
+      "last_name": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-17T12:54:17.899Z",
+      "email": "vovan@example.com",
+      "phone": null,
+      "city": null,
+      "avatar": "",
+      "groups": [],
+      "user_permissions": []
+    }
+  }
+]

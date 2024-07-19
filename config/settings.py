@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     "corsheaders",
 
     "users",
+    "materials",
+    "knowledge_test",
 ]
 
 MIDDLEWARE = [

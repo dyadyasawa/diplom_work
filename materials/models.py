@@ -1,14 +1,14 @@
 
 from django.db import models
-from config import settings
+
+NULLABLE = {"blank": True, "null": True}
 
 
 class Course(models.Model):
     title = models.CharField(max_length=50, verbose_name="Название")
     description = models.TextField(verbose_name="Описание")
-    preview = models.ImageField(upload_to="lms/courses", verbose_name="Превью", blank=True, null=True)
-    last_update_date = models.DateTimeField(blank=True, null=True, verbose_name="Дата последнего обновления")
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name="Владелец")
+    preview = models.ImageField(upload_to="materials/courses", verbose_name="Превью", **NULLABLE)
+    last_update_date = models.DateTimeField(**NULLABLE, verbose_name="Дата последнего обновления")
 
     class Meta:
         verbose_name = "Курс"
@@ -20,15 +20,10 @@ class Course(models.Model):
 
 class Lesson(models.Model):
     title = models.CharField(max_length=50, verbose_name="Название")
-    description = models.TextField(verbose_name="Описание", blank=True, null=True)
-    preview = models.ImageField(
-        upload_to="lms/lessons", verbose_name="Превью", blank=True, null=True
-    )
-    url = models.CharField(
-        max_length=100, verbose_name="Ссылка на видео", blank=True, null=True
-    )
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс", blank=True, null=True)
-    owner = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, blank=True, null=True, verbose_name="Владелец")
+    description = models.TextField(verbose_name="Описание", **NULLABLE)
+    preview = models.ImageField(upload_to="lms/lessons", verbose_name="Превью", **NULLABLE)
+    url = models.CharField(max_length=100, verbose_name="Ссылка на видео", **NULLABLE)
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс", **NULLABLE)
 
     class Meta:
         verbose_name = "Урок"

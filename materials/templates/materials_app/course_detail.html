@@ -1,0 +1,29 @@
+
+{% extends 'materials_app/base.html' %}
+
+{% block content %}
+<br>
+<div class="container">
+    <br>
+    <div class="row">
+
+        {% for object in object_list %}
+            <div class="col">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Урок: {{object.title}}
+                    </div>
+                    <div class="card-body">
+                        {{object.description}}
+
+                    </div>
+                    <div class="card-footer">
+                       <a class="btn btn-outline-secondary" href="#">Загрузить</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

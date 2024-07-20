@@ -11,6 +11,11 @@ from materials.views import (
     CourseCreateApiView,
     CourseUpdateApiView,
     CourseDestroyApiView,
+    LessonListApiView,
+    LessonDetailApiView,
+    LessonCreateApiView,
+    LessonUpdateApiView,
+    LessonDestroyApiView,
 )
 
 app_name = MaterialsConfig.name
@@ -28,10 +33,10 @@ urlpatterns = [
     path("course_update/<int:pk>/", CourseUpdateApiView.as_view(), name="course_update"),
     path("course_delete/<int:pk>/", CourseDestroyApiView.as_view(), name="course_delete"),
 
-    path("lesson_list/", CourseListApiView.as_view(), name="lesson_list"),
-    path("lesson_detail/<int:pk>/", CourseDetailApiView.as_view(), name="lesson_detail"),
-    path("lesson_create/", CourseCreateApiView.as_view(), name="lesson_create"),
-    path("lesson_update/<int:pk>/", CourseUpdateApiView.as_view(), name="lesson_update"),
-    path("lesson_delete/<int:pk>/", CourseDestroyApiView.as_view(), name="lesson_delete"),
+    path("lesson_list/", LessonListApiView.as_view(), name="lesson_list"),
+    path("lesson_detail/<int:pk>/", LessonDetailApiView.as_view(), name="lesson_detail"),
+    path("lesson_create/", LessonCreateApiView.as_view(), name="lesson_create"),
+    path("lesson_update/<int:pk>/", LessonUpdateApiView.as_view(), name="lesson_update"),
+    path("lesson_delete/<int:pk>/", LessonDestroyApiView.as_view(), name="lesson_delete"),
 ]
 

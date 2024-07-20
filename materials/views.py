@@ -43,12 +43,12 @@ from rest_framework.generics import (
 )
 from rest_framework.permissions import IsAuthenticated, IsAdminUser  # , AllowAny
 
-from materials.models import Course
+from materials.models import Course, Lesson
 from materials.paginations import CustomPagination
 from materials.serializers import CourseSerializer, LessonSerializer
 
 
-class CourseListApiView(ListAPIView):
+class CourseListApiView(ListAPIView):  # Работает
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     pagination_class = CustomPagination
@@ -62,12 +62,9 @@ class CourseListApiView(ListAPIView):
     #         return Course.objects.filter(owner=user)
 
 
-class CourseCreateApiView(CreateAPIView):
+class CourseCreateApiView(CreateAPIView):  # Работает
     serializer_class = CourseSerializer
-    permission_classes = (
-        IsAdminUser,
-    )  # Возможно строка не нужна, ведь IsAuthenticated присутствует в settings.py
-    # permission_classes = (AllowAny,)
+    permission_classes = (IsAdminUser,)
 
     # def perform_create(self, serializer):
     #     """Делаем текущего пользователя 'Создателем' привычки."""
@@ -76,11 +73,10 @@ class CourseCreateApiView(CreateAPIView):
     #     new_lesson.save()
 
 
-class CourseDetailApiView(RetrieveAPIView):
+class CourseDetailApiView(RetrieveAPIView):  # Работает
     serializer_class = CourseSerializer
-    permission_classes = (
-        IsAuthenticated, IsAdminUser,
-    )
+    queryset = Course.objects.all()
+    permission_classes = (IsAuthenticated, IsAdminUser,)
 
     # def get_queryset(self):
     #     user = self.request.user
@@ -88,19 +84,9 @@ class CourseDetailApiView(RetrieveAPIView):
     #         return Course.objects.filter(owner=user)
 
 
-class CourseUpdateApiView(UpdateAPIView):
+class CourseUpdateApiView(UpdateAPIView):  # Работает
     serializer_class = CourseSerializer
-    permission_classes = (
-        IsAdminUser,
-    )
-
-    # def get_queryset(self):
-    #     user = self.request.user
-    #     if user.is_authenticated:
-    #         return Course.objects.filter(owner=user)
-
-
-class CourseDestroyApiView(DestroyAPIView):
+    queryset = Course.objects.all()
     permission_classes = (IsAdminUser,)
 
     # def get_queryset(self):
@@ -109,8 +95,19 @@ class CourseDestroyApiView(DestroyAPIView):
     #         return Course.objects.filter(owner=user)
 
 
-class LessonListApiView(ListAPIView):
+class CourseDestroyApiView(DestroyAPIView):  # Работает
+    permission_classes = (IsAdminUser,)
+    queryset = Course.objects.all()
+
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     if user.is_authenticated:
+    #         return Course.objects.filter(owner=user)
+
+
+class LessonListApiView(ListAPIView):  # Работает
     serializer_class = LessonSerializer
+    queryset = Lesson.objects.all()
     pagination_class = CustomPagination
     permission_classes = (IsAuthenticated, IsAdminUser,)
 
@@ -122,12 +119,9 @@ class LessonListApiView(ListAPIView):
     #         return Lesson.objects.filter(owner=user)
 
 
-class LessonCreateApiView(CreateAPIView):
+class LessonCreateApiView(CreateAPIView):  # Работает
     serializer_class = LessonSerializer
-    permission_classes = (
-        IsAdminUser,
-    )  # Возможно строка не нужна, ведь IsAuthenticated присутствует в settings.py
-    # permission_classes = (AllowAny,)
+    permission_classes = (IsAdminUser,)
 
     # def perform_create(self, serializer):
     #     """Делаем текущего пользователя 'Создателем' привычки."""
@@ -136,32 +130,31 @@ class LessonCreateApiView(CreateAPIView):
     #     new_lesson.save()
 
 
-class LessonDetailApiView(RetrieveAPIView):
+class LessonDetailApiView(RetrieveAPIView):  # Работает
     serializer_class = LessonSerializer
-    permission_classes = (
-        IsAuthenticated, IsAdminUser,
-    )
+    queryset = Lesson.objects.all()
+    permission_classes = (IsAuthenticated, IsAdminUser,)
 
     # def get_queryset(self):
-    #     user = self.request.user
-    #     if user.is_authenticated:
-    #         return Lesson.objects.filter(owner=user)
+    #     # user = self.request.user
+    #     # if user.is_authenticated or user.is_superuser:
+    #     return Lesson.objects.filter(pk=)
 
 
-class LessonUpdateApiView(UpdateAPIView):
+class LessonUpdateApiView(UpdateAPIView):  # Работает
     serializer_class = LessonSerializer
-    permission_classes = (
-        IsAdminUser,
-    )
-
-    # def get_queryset(self):
-    #     user = self.request.user
-    #     if user.is_authenticated:
-    #         return Lesson.objects.filter(owner=user)
-
-
-class LessonDestroyApiView(DestroyAPIView):
+    queryset = Lesson.objects.all()
     permission_classes = (IsAdminUser,)
+
+    # def get_queryset(self):
+    #     user = self.request.user
+    #     if user.is_authenticated:
+    #         return Lesson.objects.filter(owner=user)
+
+
+class LessonDestroyApiView(DestroyAPIView):  # Работает
+    permission_classes = (IsAdminUser,)
+    queryset = Lesson.objects.all()
 
     # def get_queryset(self):
     #     user = self.request.user

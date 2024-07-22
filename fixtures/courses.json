@@ -1,1 +1,46 @@
-[{"model": "materials.course", "pk": 1, "fields": {"title": "Геометрия", "description": "Фундаментальная наука, часть математики, которая изучает фигуры и их свойства на плоскости и в пространстве", "preview": "", "last_update_date": null, "owner": null}}, {"model": "materials.course", "pk": 2, "fields": {"title": "Химия", "description": "Наука о веществах, их свойствах, строении и взаимных превращениях", "preview": "", "last_update_date": null, "owner": null}}, {"model": "materials.course", "pk": 3, "fields": {"title": "История", "description": "Наука, изучающая прошлое на основе исторических источников", "preview": "", "last_update_date": null, "owner": null}}, {"model": "materials.course", "pk": 4, "fields": {"title": "География", "description": "Наука, изучающая природу Земли, население и его хозяйственную деятельность", "preview": "", "last_update_date": null, "owner": null}}]
+[
+  {
+    "model": "materials.course",
+    "pk": 1,
+    "fields": {
+      "title": "Геометрия",
+      "description": "Фундаментальная наука, часть математики, которая изучает фигуры и их свойства на плоскости и в пространстве",
+      "preview": "",
+      "last_update_date": null,
+      "owner": null
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 2,
+    "fields": {
+      "title": "Химия",
+      "description": "Наука о веществах, их свойствах, строении и взаимных превращениях",
+      "preview": "",
+      "last_update_date": null,
+      "owner": null
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 3,
+    "fields": {
+      "title": "История",
+      "description": "Наука, изучающая прошлое на основе исторических источников",
+      "preview": "",
+      "last_update_date": null,
+      "owner": null
+    }
+  },
+  {
+    "model": "materials.course",
+    "pk": 4,
+    "fields": {
+      "title": "География",
+      "description": "Наука, изучающая природу Земли, население и его хозяйственную деятельность",
+      "preview": "",
+      "last_update_date": null,
+      "owner": null
+    }
+  }
+]

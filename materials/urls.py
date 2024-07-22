@@ -27,16 +27,16 @@ urlpatterns = [
     # path("course_detail/<int:pk>/", CourseDetailView.as_view(), name="course_detail"),
 
 
-    path("course_list/", CourseListApiView.as_view(), name="course_list"),
-    path("course_detail/<int:pk>/", CourseDetailApiView.as_view(),  name="course_detail"),
-    path("course_create/", CourseCreateApiView.as_view(), name="course_create"),
-    path("course_update/<int:pk>/", CourseUpdateApiView.as_view(), name="course_update"),
-    path("course_delete/<int:pk>/", CourseDestroyApiView.as_view(), name="course_delete"),
+    path("course/list/", CourseListApiView.as_view(), name="course_list"),
+    path("course/detail/<int:pk>/", CourseDetailApiView.as_view(),  name="course_detail"),
+    path("course/create/", CourseCreateApiView.as_view(), name="course_create"),
+    path("course/update/<int:pk>/", CourseUpdateApiView.as_view(), name="course_update"),
+    path("course/delete/<int:pk>/", CourseDestroyApiView.as_view(), name="course_delete"),
 
-    path("lesson_list/", LessonListApiView.as_view(), name="lesson_list"),
-    path("lesson_detail/<int:pk>/", LessonDetailApiView.as_view(), name="lesson_detail"),
-    path("lesson_create/", LessonCreateApiView.as_view(), name="lesson_create"),
-    path("lesson_update/<int:pk>/", LessonUpdateApiView.as_view(), name="lesson_update"),
-    path("lesson_delete/<int:pk>/", LessonDestroyApiView.as_view(), name="lesson_delete"),
+    path("lesson/list/", LessonListApiView.as_view(), name="lesson_list"),
+    path("lesson/detail/<int:pk>/", LessonDetailApiView.as_view(), name="lesson_detail"),
+    path("lesson/create/", LessonCreateApiView.as_view(), name="lesson_create"),
+    path("lesson/update/<int:pk>/", LessonUpdateApiView.as_view(), name="lesson_update"),
+    path("lesson/delete/<int:pk>/", LessonDestroyApiView.as_view(), name="lesson_delete"),
 ]
 

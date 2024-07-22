@@ -1,1 +1,542 @@
-[{"model": "knowledge_test.answer", "pk": 1, "fields": {"question": 4, "answer_text": "Один", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 2, "fields": {"question": 4, "answer_text": "Два", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 3, "fields": {"question": 4, "answer_text": "Три", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 4, "fields": {"question": 5, "answer_text": "Они не пересекаются", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 5, "fields": {"question": 5, "answer_text": "В бесконечности", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 6, "fields": {"question": 5, "answer_text": "Это философский вопрос", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 7, "fields": {"question": 6, "answer_text": "Единице", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 8, "fields": {"question": 6, "answer_text": "Я в такую жару даже из дома не выхожу", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 9, "fields": {"question": 6, "answer_text": "Ну, где-то около трех", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 10, "fields": {"question": 7, "answer_text": "2", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 11, "fields": {"question": 7, "answer_text": "Такого знака не существует", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 12, "fields": {"question": 7, "answer_text": "Да, Вы, что там, ополоумели что-ли?", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 13, "fields": {"question": 8, "answer_text": "Острый аналитический ум", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 14, "fields": {"question": 8, "answer_text": "Ровная линейка", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 15, "fields": {"question": 8, "answer_text": "Посещать все лекции", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 16, "fields": {"question": 9, "answer_text": "А кто это?", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 17, "fields": {"question": 9, "answer_text": "Д.И. Менделеев", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 18, "fields": {"question": 9, "answer_text": "Не помню", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 19, "fields": {"question": 10, "answer_text": "Спросите еще почему вода мокрая?", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 20, "fields": {"question": 10, "answer_text": "Что-то там про pH", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 21, "fields": {"question": 10, "answer_text": "Ну, кислая и кислая, мне какое дело?", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 22, "fields": {"question": 11, "answer_text": "Помню", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 23, "fields": {"question": 11, "answer_text": "Не помню", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 24, "fields": {"question": 12, "answer_text": "Вода", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 25, "fields": {"question": 12, "answer_text": "Не понял вопрос, но явно чего-то два", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 26, "fields": {"question": 12, "answer_text": "Не могу ответить, там буквы непонятные", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 27, "fields": {"question": 13, "answer_text": "Она уже сгорела", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 28, "fields": {"question": 13, "answer_text": "Горит все, главное правильно зажечь", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 29, "fields": {"question": 13, "answer_text": "Потому-что она мокрая", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 30, "fields": {"question": 14, "answer_text": "Чингизхан", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 31, "fields": {"question": 14, "answer_text": "Македонский", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 32, "fields": {"question": 14, "answer_text": "Никто", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 33, "fields": {"question": 15, "answer_text": "Не знаю", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 34, "fields": {"question": 15, "answer_text": "Ох, и давненько это было", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 35, "fields": {"question": 15, "answer_text": "А она была?", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 36, "fields": {"question": 16, "answer_text": "Ленин всегда живой", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 37, "fields": {"question": 16, "answer_text": "Ленинское РОВД", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 38, "fields": {"question": 16, "answer_text": "Ленин жил, Ленин жив, Ленин будет жить", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 39, "fields": {"question": 17, "answer_text": "Мой сосед", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 40, "fields": {"question": 17, "answer_text": "Римский император", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 41, "fields": {"question": 17, "answer_text": "Какой-то чувак из КВНа", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 42, "fields": {"question": 18, "answer_text": "Сто", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 43, "fields": {"question": 18, "answer_text": "Меньше ста", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 44, "fields": {"question": 18, "answer_text": "Больше ста", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 45, "fields": {"question": 19, "answer_text": "Озера никуда не впадают", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 46, "fields": {"question": 19, "answer_text": "В зимнюю спячку", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 47, "fields": {"question": 19, "answer_text": "В Тихий океан", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 48, "fields": {"question": 20, "answer_text": "Ну, минут десять-двадцать", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 49, "fields": {"question": 20, "answer_text": "Шестьдесят", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 50, "fields": {"question": 20, "answer_text": "Ни одной", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 51, "fields": {"question": 21, "answer_text": "На севере", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 52, "fields": {"question": 21, "answer_text": "Там где холодно", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 53, "fields": {"question": 21, "answer_text": "В зоопарке", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 54, "fields": {"question": 22, "answer_text": "Так она тает", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 55, "fields": {"question": 22, "answer_text": "Потому-что там холодно", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 56, "fields": {"question": 22, "answer_text": "На это есть причины", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 57, "fields": {"question": 23, "answer_text": "Пропил", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 58, "fields": {"question": 23, "answer_text": "Не пропил", "is_correct": true}}, {"model": "knowledge_test.answer", "pk": 59, "fields": {"question": 23, "answer_text": "Не знаю, я кино не смотрел", "is_correct": false}}, {"model": "knowledge_test.answer", "pk": 60, "fields": {"question": 11, "answer_text": "Я не изучал химию", "is_correct": false}}]
+[
+  {
+    "model": "knowledge_test.answer",
+    "pk": 1,
+    "fields": {
+      "question": 4,
+      "answer_text": "Один",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 2,
+    "fields": {
+      "question": 4,
+      "answer_text": "Два",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 3,
+    "fields": {
+      "question": 4,
+      "answer_text": "Три",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 4,
+    "fields": {
+      "question": 5,
+      "answer_text": "Они не пересекаются",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 5,
+    "fields": {
+      "question": 5,
+      "answer_text": "В бесконечности",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 6,
+    "fields": {
+      "question": 5,
+      "answer_text": "Это философский вопрос",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 7,
+    "fields": {
+      "question": 6,
+      "answer_text": "Единице",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 8,
+    "fields": {
+      "question": 6,
+      "answer_text": "Я в такую жару даже из дома не выхожу",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 9,
+    "fields": {
+      "question": 6,
+      "answer_text": "Ну, где-то около трех",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 10,
+    "fields": {
+      "question": 7,
+      "answer_text": "2",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 11,
+    "fields": {
+      "question": 7,
+      "answer_text": "Такого знака не существует",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 12,
+    "fields": {
+      "question": 7,
+      "answer_text": "Да, Вы, что там, ополоумели что-ли?",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 13,
+    "fields": {
+      "question": 8,
+      "answer_text": "Острый аналитический ум",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 14,
+    "fields": {
+      "question": 8,
+      "answer_text": "Ровная линейка",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 15,
+    "fields": {
+      "question": 8,
+      "answer_text": "Посещать все лекции",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 16,
+    "fields": {
+      "question": 9,
+      "answer_text": "А кто это?",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 17,
+    "fields": {
+      "question": 9,
+      "answer_text": "Д.И. Менделеев",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 18,
+    "fields": {
+      "question": 9,
+      "answer_text": "Не помню",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 19,
+    "fields": {
+      "question": 10,
+      "answer_text": "Спросите еще почему вода мокрая?",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 20,
+    "fields": {
+      "question": 10,
+      "answer_text": "Что-то там про pH",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 21,
+    "fields": {
+      "question": 10,
+      "answer_text": "Ну, кислая и кислая, мне какое дело?",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 22,
+    "fields": {
+      "question": 11,
+      "answer_text": "Помню",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 23,
+    "fields": {
+      "question": 11,
+      "answer_text": "Не помню",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 24,
+    "fields": {
+      "question": 12,
+      "answer_text": "Вода",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 25,
+    "fields": {
+      "question": 12,
+      "answer_text": "Не понял вопрос, но явно чего-то два",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 26,
+    "fields": {
+      "question": 12,
+      "answer_text": "Не могу ответить, там буквы непонятные",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 27,
+    "fields": {
+      "question": 13,
+      "answer_text": "Она уже сгорела",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 28,
+    "fields": {
+      "question": 13,
+      "answer_text": "Горит все, главное правильно зажечь",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 29,
+    "fields": {
+      "question": 13,
+      "answer_text": "Потому-что она мокрая",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 30,
+    "fields": {
+      "question": 14,
+      "answer_text": "Чингизхан",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 31,
+    "fields": {
+      "question": 14,
+      "answer_text": "Македонский",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 32,
+    "fields": {
+      "question": 14,
+      "answer_text": "Никто",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 33,
+    "fields": {
+      "question": 15,
+      "answer_text": "Не знаю",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 34,
+    "fields": {
+      "question": 15,
+      "answer_text": "Ох, и давненько это было",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 35,
+    "fields": {
+      "question": 15,
+      "answer_text": "А она была?",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 36,
+    "fields": {
+      "question": 16,
+      "answer_text": "Ленин всегда живой",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 37,
+    "fields": {
+      "question": 16,
+      "answer_text": "Ленинское РОВД",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 38,
+    "fields": {
+      "question": 16,
+      "answer_text": "Ленин жил, Ленин жив, Ленин будет жить",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 39,
+    "fields": {
+      "question": 17,
+      "answer_text": "Мой сосед",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 40,
+    "fields": {
+      "question": 17,
+      "answer_text": "Римский император",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 41,
+    "fields": {
+      "question": 17,
+      "answer_text": "Какой-то чувак из КВНа",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 42,
+    "fields": {
+      "question": 18,
+      "answer_text": "Сто",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 43,
+    "fields": {
+      "question": 18,
+      "answer_text": "Меньше ста",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 44,
+    "fields": {
+      "question": 18,
+      "answer_text": "Больше ста",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 45,
+    "fields": {
+      "question": 19,
+      "answer_text": "Озера никуда не впадают",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 46,
+    "fields": {
+      "question": 19,
+      "answer_text": "В зимнюю спячку",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 47,
+    "fields": {
+      "question": 19,
+      "answer_text": "В Тихий океан",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 48,
+    "fields": {
+      "question": 20,
+      "answer_text": "Ну, минут десять-двадцать",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 49,
+    "fields": {
+      "question": 20,
+      "answer_text": "Шестьдесят",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 50,
+    "fields": {
+      "question": 20,
+      "answer_text": "Ни одной",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 51,
+    "fields": {
+      "question": 21,
+      "answer_text": "На севере",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 52,
+    "fields": {
+      "question": 21,
+      "answer_text": "Там где холодно",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 53,
+    "fields": {
+      "question": 21,
+      "answer_text": "В зоопарке",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 54,
+    "fields": {
+      "question": 22,
+      "answer_text": "Так она тает",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 55,
+    "fields": {
+      "question": 22,
+      "answer_text": "Потому-что там холодно",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 56,
+    "fields": {
+      "question": 22,
+      "answer_text": "На это есть причины",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 57,
+    "fields": {
+      "question": 23,
+      "answer_text": "Пропил",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 58,
+    "fields": {
+      "question": 23,
+      "answer_text": "Не пропил",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 59,
+    "fields": {
+      "question": 23,
+      "answer_text": "Не знаю, я кино не смотрел",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "knowledge_test.answer",
+    "pk": 60,
+    "fields": {
+      "question": 11,
+      "answer_text": "Я не изучал химию",
+      "is_correct": false
+    }
+  }
+]

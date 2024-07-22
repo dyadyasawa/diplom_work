@@ -1,3 +1,97 @@
-from django.shortcuts import render
 
-# Create your views here.
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+
+from knowledge_test.models import CourseTest, Question, Answer
+
+from knowledge_test.serializers import CourseTestSerializer, QuestionSerializer, AnswerSerializer
+from rest_framework.permissions import IsAdminUser
+
+
+class CourseTestListApiView(ListAPIView):
+    serializer_class = CourseTestSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class CourseTestDetailApiView(RetrieveAPIView):
+    serializer_class = CourseTestSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class CourseTestCreateApiView(CreateAPIView):
+    serializer_class = CourseTestSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class CourseTestUpdateApiView(UpdateAPIView):
+    serializer_class = CourseTestSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class CourseTestDeleteApiView(DestroyAPIView):
+    serializer_class = CourseTestSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class QuestionListApiView(ListAPIView):
+    serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class QuestionDetailApiView(RetrieveAPIView):
+    serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class QuestionCreateApiView(CreateAPIView):
+    serializer_class = QuestionSerializer
+    queryset = Question.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class QuestionUpdateApiView(UpdateAPIView):
+    serializer_class = QuestionSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class QuestionDeleteApiView(DestroyAPIView):
+    serializer_class = QuestionSerializer
+    queryset = CourseTest.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class AnswerListApiView(ListAPIView):
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class AnswerDetailApiView(RetrieveAPIView):
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class AnswerCreateApiView(CreateAPIView):
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class AnswerUpdateApiView(UpdateAPIView):
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+    permission_classes = (IsAdminUser,)
+
+
+class AnswerDeleteApiView(DestroyAPIView):
+    serializer_class = AnswerSerializer
+    queryset = Answer.objects.all()
+    permission_classes = (IsAdminUser,)

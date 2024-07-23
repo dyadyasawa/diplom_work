@@ -24,6 +24,8 @@ from knowledge_test.views import (
     AnswerDeleteApiView,
 
     GetQuestions,
+    GetAnswers,
+    AnswerVerification,
 )
 
 
@@ -48,5 +50,7 @@ urlpatterns = [
     path("answer/update/<int:pk>/", AnswerUpdateApiView.as_view(), name="answer_update"),
     path("answer/delete/<int:pk>/", AnswerDeleteApiView.as_view(), name="answer_delete"),
 
-    path("get/questions/<int:pk>/", GetQuestions.as_view(), name="get_questions"),
+    path("get/questions/<int:course_pk>/", GetQuestions.as_view(), name="get_questions"),
+    path("get/answers/<int:question_pk>/", GetAnswers.as_view(), name="get_answers"),
+    path("answer/verification/<int:question_pk>/", AnswerVerification.as_view(), name="answer_verification"),
 ]

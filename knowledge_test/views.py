@@ -102,15 +102,25 @@ class AnswerDeleteApiView(DestroyAPIView):
 class GetQuestions(APIView):
     def get(self, request, *args, **kwargs):
         """ Получение вопросов для теста по заданному курсу. """
-        course_test = CourseTest.objects.get(pk=kwargs["pk"])
-        lst = course_test.question_set.all().values()
 
-        return Response({"Вопросы": list(lst)})
+        course_test = CourseTest.objects.get(pk=kwargs["course_pk"])
+        questions_lst = course_test.question_set.all().values()
+        return Response({"Вопросы": list(questions_lst)})
 
 
 class GetAnswers(APIView):
-    pass
+    """ Получение ответов для теста по заданному вопросу. """
+
+    def get(self, request, *args, **kwargs):
+        question = Question.objects.get(pk=kwargs["question_pk"])
+        answers_lst = question.answer_set.all().values()
+        return Response({"Варианты ответа": list(answers_lst)})
 
 
-class GetIsCorrectAnswer(APIView):
-    pass
+class AnswerVerification(APIView):
+    """ Проверка правильности ответа. """
+
+    def get(self, request, *args, **kwargs):
+        question = Question.objects.get(pk=kwargs["question_pk"])
+        answers_lst = question.answer_set.filter(is_correct=True).values()
+        return Response({"Варианты ответа": list(answers_lst)})

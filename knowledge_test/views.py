@@ -147,9 +147,19 @@ class GetIsCorrectAnswer(APIView):
 class AnswerVerification(APIView):
     """ Проверка правильности ответа. """
 
-    pass
+    def post(self, request, *args, **kwargs):
+        question_pk = kwargs["question_pk"]
+        answer_pk = kwargs["answer_pk"]
 
-    # def post(self, request, *args, **kwargs):
-    #     question = Question.objects.get(pk=kwargs["question_pk"])
-    #     answers_lst = question.answer_set.filter(is_correct=True).values()
-    #     return Response({"Варианты ответа": list(answers_lst)})
+        question = Question.objects.get(pk=question_pk)
+        answers_lst = question.answer_set.filter(is_correct=True).values()
+        pk_list = []
+
+        for item in answers_lst:
+            pk_list.append(item["id"])
+        if answer_pk in pk_list:
+            message = "Правильно!"
+        else:
+            message = "Неправильно!"
+
+        return Response({"message": message})

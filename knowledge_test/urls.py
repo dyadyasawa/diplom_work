@@ -57,5 +57,5 @@ urlpatterns = [
     path("get/answers_cq/<int:course_pk>/<int:question_pk>/", GetAnswersCQ.as_view(), name="get_answers_cq"),
     path("get/is_correct_answer/<int:question_pk>/", GetIsCorrectAnswer.as_view(), name="get_is_correct_answers"),
 
-    # path("answer/verification/<int:question_pk>/", AnswerVerification.as_view(), name="answer_verification"),
+    path("answer/verification/<int:question_pk>/<int:answer_pk>/", AnswerVerification.as_view(), name="answer_verification"),
 ]

@@ -163,3 +163,7 @@ class AnswerVerification(APIView):
             message = "Неправильно!"
 
         return Response({"message": message})
+
+
+class SendUrl(APIView):
+    pass

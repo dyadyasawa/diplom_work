@@ -93,9 +93,8 @@ class CourseTestCase(APITestCase):
         self.user = User.objects.create(email="admin@example.com", is_staff=True)
         self.client.force_authenticate(user=self.user)
         self.course = Course.objects.create(title="История", description="Наука, изучающая прошлое")
-        # self.lesson = Lesson.objects.create(title="Урок_1", description="Введение", course=self.course)
 
-    def test_lesson_retrieve(self):
+    def test_course_retrieve(self):
         url = reverse("materials:course_detail", args=(self.course.pk,))
         response = self.client.get(url)
         data = response.json()

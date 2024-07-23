@@ -6,7 +6,7 @@ from materials.models import Course
 
 class CourseTest(models.Model):
     name = models.CharField(max_length=250, verbose_name="Название теста")
-    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс")
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, verbose_name="Курс", blank=True, null=True)
 
     class Meta:
         verbose_name = "Тест"

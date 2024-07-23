@@ -1,5 +1,7 @@
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from knowledge_test.models import CourseTest, Question, Answer
 
@@ -95,3 +97,20 @@ class AnswerDeleteApiView(DestroyAPIView):
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
+
+
+class GetQuestions(APIView):
+    def get(self, request, *args, **kwargs):
+        """ Получение вопросов для теста по заданному курсу. """
+        course_test = CourseTest.objects.get(pk=kwargs["pk"])
+        lst = course_test.question_set.all().values()
+
+        return Response({"Вопросы": list(lst)})
+
+
+class GetAnswers(APIView):
+    pass
+
+
+class GetIsCorrectAnswer(APIView):
+    pass

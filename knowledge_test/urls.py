@@ -22,6 +22,8 @@ from knowledge_test.views import (
     AnswerCreateApiView,
     AnswerUpdateApiView,
     AnswerDeleteApiView,
+
+    GetQuestions,
 )
 
 
@@ -45,4 +47,6 @@ urlpatterns = [
     path("answer/create/", AnswerCreateApiView.as_view(), name="answer_create"),
     path("answer/update/<int:pk>/", AnswerUpdateApiView.as_view(), name="answer_update"),
     path("answer/delete/<int:pk>/", AnswerDeleteApiView.as_view(), name="answer_delete"),
+
+    path("get/questions/<int:pk>/", GetQuestions.as_view(), name="get_questions"),
 ]

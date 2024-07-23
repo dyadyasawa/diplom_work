@@ -25,6 +25,8 @@ from knowledge_test.views import (
 
     GetQuestions,
     GetAnswers,
+    GetAnswersCQ,
+    GetIsCorrectAnswer,
     AnswerVerification,
 )
 
@@ -52,5 +54,8 @@ urlpatterns = [
 
     path("get/questions/<int:course_pk>/", GetQuestions.as_view(), name="get_questions"),
     path("get/answers/<int:question_pk>/", GetAnswers.as_view(), name="get_answers"),
-    path("answer/verification/<int:question_pk>/", AnswerVerification.as_view(), name="answer_verification"),
+    path("get/answers_cq/<int:course_pk>/<int:question_pk>/", GetAnswersCQ.as_view(), name="get_answers_cq"),
+    path("get/is_correct_answer/<int:question_pk>/", GetIsCorrectAnswer.as_view(), name="get_is_correct_answers"),
+
+    # path("answer/verification/<int:question_pk>/", AnswerVerification.as_view(), name="answer_verification"),
 ]

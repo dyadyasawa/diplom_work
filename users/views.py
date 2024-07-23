@@ -1,22 +1,15 @@
 
-# from config import settings
-# from users.forms import UserRegisterForm
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 
 from users.models import User
-# from django.views.generic import CreateView, TemplateView, ListView, UpdateView
-# from django.core.mail import send_mail
-# from django.contrib.auth.mixins import PermissionRequiredMixin, LoginRequiredMixin
-# from django.shortcuts import get_object_or_404, redirect
-# from django.http import HttpResponseRedirect
-# from django.urls import reverse_lazy, reverse
-# import secrets
 
 from users.serializers import UserSerializer
 from rest_framework.permissions import IsAdminUser, AllowAny
 
 
-class UserCreateAPIView(CreateAPIView):  # Работает
+class UserCreateAPIView(CreateAPIView):
+    """ Создание пользователя. """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (AllowAny,)
@@ -27,59 +20,33 @@ class UserCreateAPIView(CreateAPIView):  # Работает
         user.save()
 
 
-class UserListApiView(ListAPIView):  # Работает
+class UserListApiView(ListAPIView):
+    """ Просмотр списка пользователей. """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
 
 
-class UserDetailApiView(RetrieveAPIView):  # Работает
+class UserDetailApiView(RetrieveAPIView):
+    """ Просмотр выбранного пользователя. """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
 
 
-class UserUpdateApiView(UpdateAPIView):  # Работает
+class UserUpdateApiView(UpdateAPIView):
+    """ Редактирование пользователя. """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
 
 
-class UserDeleteApiView(DestroyAPIView):  # Работает
+class UserDeleteApiView(DestroyAPIView):
+    """ Удаление пользователя. """
+
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
-
-# class UserCreateView(CreateView):  # LoginRequiredMixin,
-#     model = User
-#     template_name = "users_app/user_form.html"
-#     form_class = UserRegisterForm
-#     success_url = reverse_lazy("users:register_message")
-#
-#     def form_valid(self, form):
-#         user = form.save()
-#         user.is_active = False
-#         token = secrets.token_hex(8)
-#         user.token = token
-#         user.save()
-#         host = self.request.get_host()
-#         url = f"http://{host}/users/email_confirm/{token}/"
-#
-#         send_mail(
-#             subject="Подтверждение почты",
-#             message=f"Перейдите по ссылке для подтверждения почты {url}",
-#             from_email=settings.EMAIL_HOST_USER,
-#             recipient_list=[user.email],
-#         )
-#         return super().form_valid(form)
-#
-#
-# class RegisterMessageView(TemplateView):
-#     template_name = "users_app/register_message.html"
-#
-#
-# def email_verification(request, token):
-#     user = get_object_or_404(User, token=token)
-#     user.is_active = True
-#     user.save()
-#     return HttpResponseRedirect("/users/login/")

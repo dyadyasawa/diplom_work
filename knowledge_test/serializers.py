@@ -1,5 +1,5 @@
 
-from rest_framework import serializers  # ModelSerializer, SerializerMethodField
+from rest_framework import serializers
 
 from knowledge_test.models import CourseTest, Question, Answer
 

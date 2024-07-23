@@ -3,8 +3,6 @@ from django.db import models
 
 from materials.models import Course
 
-# NULLABLE = {"null": True, "blank": True}
-
 
 class CourseTest(models.Model):
     name = models.CharField(max_length=250, verbose_name="Название теста")

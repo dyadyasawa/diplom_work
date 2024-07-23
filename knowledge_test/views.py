@@ -10,90 +10,120 @@ from rest_framework.permissions import IsAdminUser
 
 
 class CourseTestListApiView(ListAPIView):
+    """ Просмотр списка тестов. """
+
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class CourseTestDetailApiView(RetrieveAPIView):
+    """ Просмотр выбранного теста. """
+
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class CourseTestCreateApiView(CreateAPIView):
+    """ Создание теста. """
+
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class CourseTestUpdateApiView(UpdateAPIView):
+    """ Редакирование выбранного теста. """
+
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class CourseTestDeleteApiView(DestroyAPIView):
+    """ Удаление теста. """
+
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class QuestionListApiView(ListAPIView):
+    """ Просмотр списка вопросов. """
+
     serializer_class = QuestionSerializer
     queryset = Question.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class QuestionDetailApiView(RetrieveAPIView):
+    """ Просмотр выбранного вопроса. """
+
     serializer_class = QuestionSerializer
     queryset = Question.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class QuestionCreateApiView(CreateAPIView):
+    """ Создание вопроса. """
+
     serializer_class = QuestionSerializer
     queryset = Question.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class QuestionUpdateApiView(UpdateAPIView):
+    """ Редактирование выбранного вопроса. """
+
     serializer_class = QuestionSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class QuestionDeleteApiView(DestroyAPIView):
+    """ Удаление выбранного вопроса. """
+
     serializer_class = QuestionSerializer
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class AnswerListApiView(ListAPIView):
+    """ Просмотр списка ответов. """
+
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class AnswerDetailApiView(RetrieveAPIView):
+    """ Просмотр выбранного ответа. """
+
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class AnswerCreateApiView(CreateAPIView):
+    """ Создание ответа. """
+
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class AnswerUpdateApiView(UpdateAPIView):
+    """ Редактирование выбранного ответа. """
+
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
 
 
 class AnswerDeleteApiView(DestroyAPIView):
+    """ Удаление выбранного ответа. """
+
     serializer_class = AnswerSerializer
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
@@ -101,7 +131,7 @@ class AnswerDeleteApiView(DestroyAPIView):
 
 class GetQuestions(APIView):
     def get(self, request, *args, **kwargs):
-        """ Получение вопросов для теста по id курса. """
+        """ Получение вопросов для теста по id теста. """
 
         course_test = CourseTest.objects.get(pk=kwargs["course_pk"])
         questions_lst = course_test.question_set.all().values()
@@ -119,7 +149,7 @@ class GetAnswers(APIView):
 
 class GetAnswersCQ(APIView):
     def get(self, request, *args, **kwargs):
-        """ Получение ответов для теста по id курса и id вопроса. """
+        """ Получение ответов для теста по id теста и id вопроса. """
 
         course_pk = kwargs["course_pk"]
         print(course_pk)
@@ -145,7 +175,7 @@ class GetIsCorrectAnswer(APIView):
 
 
 class AnswerVerification(APIView):
-    """ Проверка правильности ответа. """
+    """ Проверка правильности ответа по id вопроса и id ответа. """
 
     def post(self, request, *args, **kwargs):
         question_pk = kwargs["question_pk"]
@@ -163,7 +193,3 @@ class AnswerVerification(APIView):
             message = "Неправильно!"
 
         return Response({"message": message})
-
-
-class SendUrl(APIView):
-    pass

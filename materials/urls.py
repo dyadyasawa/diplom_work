@@ -15,7 +15,7 @@ from materials.views import (
     LessonDetailApiView,
     LessonCreateApiView,
     LessonUpdateApiView,
-    LessonDestroyApiView,
+    LessonDestroyApiView, SendContent,
 )
 
 app_name = MaterialsConfig.name
@@ -38,5 +38,7 @@ urlpatterns = [
     path("lesson/create/", LessonCreateApiView.as_view(), name="lesson_create"),
     path("lesson/update/<int:pk>/", LessonUpdateApiView.as_view(), name="lesson_update"),
     path("lesson/delete/<int:pk>/", LessonDestroyApiView.as_view(), name="lesson_delete"),
+
+    path("send/content/<int:lesson_pk>/<int:user_pk>/", SendContent.as_view(), name="send_content"),
 ]
 

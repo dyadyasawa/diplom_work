@@ -42,8 +42,11 @@ from rest_framework.generics import (
     DestroyAPIView,
 )
 from rest_framework.permissions import IsAuthenticated, IsAdminUser  # , AllowAny
+from rest_framework.views import APIView
+from django.core.mail import send_mail
 
 from materials.models import Course, Lesson
+from users.models import User
 from materials.paginations import CustomPagination
 from materials.serializers import CourseSerializer, LessonSerializer
 
@@ -160,3 +163,31 @@ class LessonDestroyApiView(DestroyAPIView):  # Работает
     #     user = self.request.user
     #     if user.is_authenticated:
     #         return Lesson.objects.filter(owner=user)
+
+
+class SendContent(APIView):
+    def post(self, request, *args, **kwargs):
+        lesson_pk = kwargs["lesson_pk"]
+        user_pk = kwargs["user_pk"]
+
+        # model = User
+        # template_name = "users_app/user_form.html"
+        # form_class = UserRegisterForm
+        # success_url = reverse_lazy("users:register_message")
+        #
+        # def form_valid(self, form):
+        #     user = form.save()
+        #     user.is_active = False
+        #     code = secrets.token_hex(8)
+        #     user.code = code
+        #     user.save()
+        #     host = self.request.get_host()
+        #     url = f"http://{host}/users/email_confirm/{code}/"
+        #
+        #     send_mail(
+        #         subject="Подтверждение почты",
+        #         message=f"Перейдите по ссылке для подтверждения почты {url}",
+        #         from_email=settings.EMAIL_HOST_USER,
+        #         recipient_list=[user.email],
+        #     )
+        #     return super().form_valid(form)

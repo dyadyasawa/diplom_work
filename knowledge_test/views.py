@@ -1,14 +1,21 @@
-from rest_framework.generics import (CreateAPIView, DestroyAPIView,
-                                     ListAPIView, RetrieveAPIView,
-                                     UpdateAPIView)
+from rest_framework.generics import (
+    CreateAPIView,
+    DestroyAPIView,
+    ListAPIView,
+    RetrieveAPIView,
+    UpdateAPIView,
+)
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from knowledge_test.models import Answer, CourseTest, Question
 from knowledge_test.paginations import CustomPagination
-from knowledge_test.serializers import (AnswerSerializer, CourseTestSerializer,
-                                        QuestionSerializer)
+from knowledge_test.serializers import (
+    AnswerSerializer,
+    CourseTestSerializer,
+    QuestionSerializer,
+)
 
 
 class CourseTestListApiView(ListAPIView):

@@ -1,18 +1,28 @@
 from django.urls import path
 
 from knowledge_test.apps import KnowledgeTestConfig
-from knowledge_test.views import (AnswerCreateApiView, AnswerDeleteApiView,
-                                  AnswerDetailApiView, AnswerListApiView,
-                                  AnswerUpdateApiView, AnswerVerification,
-                                  CourseTestCreateApiView,
-                                  CourseTestDeleteApiView,
-                                  CourseTestDetailApiView,
-                                  CourseTestListApiView,
-                                  CourseTestUpdateApiView, GetAnswers,
-                                  GetAnswersCQ, GetIsCorrectAnswer,
-                                  GetQuestions, QuestionCreateApiView,
-                                  QuestionDeleteApiView, QuestionDetailApiView,
-                                  QuestionListApiView, QuestionUpdateApiView)
+from knowledge_test.views import (
+    AnswerCreateApiView,
+    AnswerDeleteApiView,
+    AnswerDetailApiView,
+    AnswerListApiView,
+    AnswerUpdateApiView,
+    AnswerVerification,
+    CourseTestCreateApiView,
+    CourseTestDeleteApiView,
+    CourseTestDetailApiView,
+    CourseTestListApiView,
+    CourseTestUpdateApiView,
+    GetAnswers,
+    GetAnswersCQ,
+    GetIsCorrectAnswer,
+    GetQuestions,
+    QuestionCreateApiView,
+    QuestionDeleteApiView,
+    QuestionDetailApiView,
+    QuestionListApiView,
+    QuestionUpdateApiView,
+)
 
 app_name = KnowledgeTestConfig.name
 

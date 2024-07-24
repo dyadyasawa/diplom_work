@@ -1,12 +1,19 @@
 from django.urls import path
 
 from materials.apps import MaterialsConfig
-from materials.views import (CourseCreateApiView, CourseDestroyApiView,
-                             CourseDetailApiView, CourseListApiView,
-                             CourseUpdateApiView, LessonCreateApiView,
-                             LessonDestroyApiView, LessonDetailApiView,
-                             LessonListApiView, LessonUpdateApiView,
-                             SendContent)
+from materials.views import (
+    CourseCreateApiView,
+    CourseDestroyApiView,
+    CourseDetailApiView,
+    CourseListApiView,
+    CourseUpdateApiView,
+    LessonCreateApiView,
+    LessonDestroyApiView,
+    LessonDetailApiView,
+    LessonListApiView,
+    LessonUpdateApiView,
+    SendContent,
+)
 
 app_name = MaterialsConfig.name
 

@@ -58,6 +58,7 @@ class QuestionListApiView(ListAPIView):
     pagination_class = CustomPagination
     queryset = Question.objects.all()
     permission_classes = (IsAdminUser,)
+    ordering_fields = ("pk",)
 
 
 class QuestionDetailApiView(RetrieveAPIView):

@@ -28,6 +28,7 @@ class UserListApiView(ListAPIView):
     pagination_class = CustomPagination
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
+    filterset_fields = ("is_superuser",)
 
 
 class UserDetailApiView(RetrieveAPIView):

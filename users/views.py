@@ -2,6 +2,7 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 
 from users.models import User
+from users.paginations import CustomPagination
 
 from users.serializers import UserSerializer
 from rest_framework.permissions import IsAdminUser, AllowAny
@@ -24,6 +25,7 @@ class UserListApiView(ListAPIView):
     """ Просмотр списка пользователей. """
 
     serializer_class = UserSerializer
+    pagination_class = CustomPagination
     queryset = User.objects.all()
     permission_classes = (IsAdminUser,)
 

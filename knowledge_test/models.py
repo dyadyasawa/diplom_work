@@ -17,7 +17,7 @@ class CourseTest(models.Model):
 
 
 class Question(models.Model):
-    course_test = models.ForeignKey(CourseTest, on_delete=models.CASCADE, verbose_name="Тест")
+    course_test = models.ForeignKey(CourseTest, on_delete=models.CASCADE, verbose_name="Тест", blank=True, null=True)
     question_text = models.CharField(max_length=300, verbose_name="Текст вопроса")
 
     class Meta:
@@ -29,7 +29,7 @@ class Question(models.Model):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name="Вопрос")
+    question = models.ForeignKey(Question, on_delete=models.CASCADE, verbose_name="Вопрос", blank=True, null=True)
     answer_text = models.CharField(max_length=300, verbose_name="Текст ответа")
     is_correct = models.BooleanField(default=False, verbose_name="Правильность ответа")
 

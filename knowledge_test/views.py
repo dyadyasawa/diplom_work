@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from knowledge_test.models import CourseTest, Question, Answer
+from knowledge_test.paginations import CustomPagination
 
 from knowledge_test.serializers import CourseTestSerializer, QuestionSerializer, AnswerSerializer
 from rest_framework.permissions import IsAdminUser
@@ -13,6 +14,7 @@ class CourseTestListApiView(ListAPIView):
     """ Просмотр списка тестов. """
 
     serializer_class = CourseTestSerializer
+    pagination_class = CustomPagination
     queryset = CourseTest.objects.all()
     permission_classes = (IsAdminUser,)
 
@@ -53,6 +55,7 @@ class QuestionListApiView(ListAPIView):
     """ Просмотр списка вопросов. """
 
     serializer_class = QuestionSerializer
+    pagination_class = CustomPagination
     queryset = Question.objects.all()
     permission_classes = (IsAdminUser,)
 
@@ -93,6 +96,7 @@ class AnswerListApiView(ListAPIView):
     """ Просмотр списка ответов. """
 
     serializer_class = AnswerSerializer
+    pagination_class = CustomPagination
     queryset = Answer.objects.all()
     permission_classes = (IsAdminUser,)
 

@@ -1,7 +1,6 @@
-
 from rest_framework import serializers
 
-from knowledge_test.models import CourseTest, Question, Answer
+from knowledge_test.models import Answer, CourseTest, Question
 
 
 class CourseTestSerializer(serializers.ModelSerializer):

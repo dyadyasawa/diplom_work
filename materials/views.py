@@ -1,49 +1,50 @@
-
-from rest_framework.generics import (
-    CreateAPIView,
-    ListAPIView,
-    RetrieveAPIView,
-    UpdateAPIView,
-    DestroyAPIView,
-)
-from rest_framework.permissions import IsAuthenticated, IsAdminUser, AllowAny
+from django.core.mail import send_mail
+from rest_framework.generics import (CreateAPIView, DestroyAPIView,
+                                     ListAPIView, RetrieveAPIView,
+                                     UpdateAPIView)
+from rest_framework.permissions import AllowAny, IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.core.mail import send_mail
 
 from config import settings
 from materials.models import Course, Lesson
-from users.models import User
 from materials.paginations import CustomPagination
 from materials.serializers import CourseSerializer, LessonSerializer
+from users.models import User
 
 
 class CourseListApiView(ListAPIView):
-    """ Просмотр списка курсов. """
+    """Просмотр списка курсов."""
 
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     pagination_class = CustomPagination
-    permission_classes = (IsAuthenticated, IsAdminUser,)
+    permission_classes = (
+        IsAuthenticated,
+        IsAdminUser,
+    )
 
 
 class CourseCreateApiView(CreateAPIView):
-    """ Создание курса. """
+    """Создание курса."""
 
     serializer_class = CourseSerializer
     permission_classes = (IsAdminUser,)
 
 
 class CourseDetailApiView(RetrieveAPIView):
-    """ Просмотр выбранного курса. """
+    """Просмотр выбранного курса."""
 
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
-    permission_classes = (IsAuthenticated, IsAdminUser,)
+    permission_classes = (
+        IsAuthenticated,
+        IsAdminUser,
+    )
 
 
 class CourseUpdateApiView(UpdateAPIView):
-    """ Редактирование выбранного курса. """
+    """Редактирование выбранного курса."""
 
     serializer_class = CourseSerializer
     queryset = Course.objects.all()
@@ -51,38 +52,44 @@ class CourseUpdateApiView(UpdateAPIView):
 
 
 class CourseDestroyApiView(DestroyAPIView):
-    """ Удаление выбранного курса. """
+    """Удаление выбранного курса."""
 
     permission_classes = (IsAdminUser,)
     queryset = Course.objects.all()
 
 
 class LessonListApiView(ListAPIView):
-    """ Просмотр списка уроков. """
+    """Просмотр списка уроков."""
 
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
     pagination_class = CustomPagination
-    permission_classes = (IsAuthenticated, IsAdminUser,)
+    permission_classes = (
+        IsAuthenticated,
+        IsAdminUser,
+    )
 
 
 class LessonCreateApiView(CreateAPIView):
-    """ Создание урока. """
+    """Создание урока."""
 
     serializer_class = LessonSerializer
     permission_classes = (IsAdminUser,)
 
 
 class LessonDetailApiView(RetrieveAPIView):
-    """ Просмотр выбранного урока. """
+    """Просмотр выбранного урока."""
 
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
-    permission_classes = (IsAuthenticated, IsAdminUser,)
+    permission_classes = (
+        IsAuthenticated,
+        IsAdminUser,
+    )
 
 
 class LessonUpdateApiView(UpdateAPIView):
-    """ Редактирование выбранного урока. """
+    """Редактирование выбранного урока."""
 
     serializer_class = LessonSerializer
     queryset = Lesson.objects.all()
@@ -90,16 +97,19 @@ class LessonUpdateApiView(UpdateAPIView):
 
 
 class LessonDestroyApiView(DestroyAPIView):
-    """ Удаление выбранного урока. """
+    """Удаление выбранного урока."""
 
     permission_classes = (IsAdminUser,)
     queryset = Lesson.objects.all()
 
 
 class SendContent(APIView):
-    """ Отправка пользователю ссылки на выбранный урок по id урока и id пользователя. """
+    """Отправка пользователю ссылки на выбранный урок по id урока и id пользователя."""
 
-    permission_classes = (IsAuthenticated, IsAdminUser,)
+    permission_classes = (
+        IsAuthenticated,
+        IsAdminUser,
+    )
 
     def post(self, request, *args, **kwargs):
         lesson_pk = kwargs["lesson_pk"]
@@ -113,4 +123,6 @@ class SendContent(APIView):
             from_email=settings.EMAIL_HOST_USER,
             recipient_list=[user_email],
         )
-        return Response({"message": "На Ваш email отправлена ссылка на контент выбранного урока"})
+        return Response(
+            {"message": "На Ваш email отправлена ссылка на контент выбранного урока"}
+        )

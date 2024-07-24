@@ -1,15 +1,15 @@
-
-from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
+from rest_framework.generics import (CreateAPIView, DestroyAPIView,
+                                     ListAPIView, RetrieveAPIView,
+                                     UpdateAPIView)
+from rest_framework.permissions import AllowAny, IsAdminUser
 
 from users.models import User
 from users.paginations import CustomPagination
-
 from users.serializers import UserSerializer
-from rest_framework.permissions import IsAdminUser, AllowAny
 
 
 class UserCreateAPIView(CreateAPIView):
-    """ Создание пользователя. """
+    """Создание пользователя."""
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -22,7 +22,7 @@ class UserCreateAPIView(CreateAPIView):
 
 
 class UserListApiView(ListAPIView):
-    """ Просмотр списка пользователей. """
+    """Просмотр списка пользователей."""
 
     serializer_class = UserSerializer
     pagination_class = CustomPagination
@@ -32,7 +32,7 @@ class UserListApiView(ListAPIView):
 
 
 class UserDetailApiView(RetrieveAPIView):
-    """ Просмотр выбранного пользователя. """
+    """Просмотр выбранного пользователя."""
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -40,7 +40,7 @@ class UserDetailApiView(RetrieveAPIView):
 
 
 class UserUpdateApiView(UpdateAPIView):
-    """ Редактирование пользователя. """
+    """Редактирование пользователя."""
 
     serializer_class = UserSerializer
     queryset = User.objects.all()
@@ -48,7 +48,7 @@ class UserUpdateApiView(UpdateAPIView):
 
 
 class UserDeleteApiView(DestroyAPIView):
-    """ Удаление пользователя. """
+    """Удаление пользователя."""
 
     serializer_class = UserSerializer
     queryset = User.objects.all()

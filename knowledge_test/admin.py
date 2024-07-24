@@ -1,7 +1,6 @@
-
 from django.contrib import admin
 
-from knowledge_test.models import CourseTest, Question, Answer
+from knowledge_test.models import Answer, CourseTest, Question
 
 
 @admin.register(CourseTest)

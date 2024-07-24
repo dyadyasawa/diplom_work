@@ -36,54 +36,46 @@ class CourseTestTestCase(APITestCase):
             CourseTest.objects.filter(name="Тест по литературе").count(), 1
         )
 
-    # def test_lesson_update(self):
-    #     url = reverse("materials:lesson_update", args=(self.lesson.pk,))
-    #     data = {
-    #         "title": "Урок_10"
-    #     }
-    #     response = self.client.patch(url, data)
-    #     data = response.json()
-    #     self.assertEqual(
-    #         response.status_code, status.HTTP_200_OK
-    #     )
-    #     self.assertEqual(
-    #         data.get("title"), "Урок_10"
-    #     )
-    #
-    # def test_lesson_delete(self):
-    #     url = reverse("materials:lesson_delete", args=(self.lesson.pk,))
-    #     response = self.client.delete(url)
-    #     self.assertEqual(
-    #         response.status_code, status.HTTP_204_NO_CONTENT
-    #     )
-    #     self.assertEqual(
-    #         Lesson.objects.all().count(), 0
-    #     )
-    #
-    # def test_lesson_list(self):
-    #     url = reverse("materials:lesson_list")
-    #     response = self.client.get(url)
-    #     data = response.json()
-    #
-    #     self.assertEqual(
-    #         response.status_code, status.HTTP_200_OK
-    #     )
-    #     result = {
-    #               "count": 1,
-    #               "next": None,
-    #               "previous": None,
-    #               "results": [
-    #                          {
-    #                           "id": self.lesson.pk,
-    #                           "title": self.lesson.title,
-    #                           "description": self.lesson.description,
-    #                           "preview": None,
-    #                           "url": None,
-    #                           "course": self.course.pk
-    #                           }
-    #                           ]
-    #             }
-    #     self.assertEqual(
-    #         data, result
-    #     )
-    #
+    def test_lesson_update(self):
+        url = reverse("knowledge_test:course_test_update", args=(self.course_test.pk,))
+        data = {
+            "name": "Тест по биологии"
+        }
+        response = self.client.patch(url, data)
+        data = response.json()
+        self.assertEqual(
+            response.status_code, status.HTTP_200_OK
+        )
+        self.assertEqual(
+            data.get("name"), "Тест по биологии"
+        )
+
+    def test_knowledge_test_delete(self):
+        url = reverse("knowledge_test:course_test_delete", args=(self.course_test.pk,))
+        response = self.client.delete(url)
+        self.assertEqual(
+            response.status_code, status.HTTP_204_NO_CONTENT
+        )
+        self.assertEqual(
+            CourseTest.objects.all().count(), 0
+        )
+
+    def test_knowledge_list(self):
+        url = reverse("knowledge_test:course_test_list")
+        response = self.client.get(url)
+        data = response.json()
+
+        self.assertEqual(
+            response.status_code, status.HTTP_200_OK
+        )
+        result = [
+            {
+                 "id": self.course_test.pk,
+                 "name": self.course_test.name,
+                 "course": self.course.pk
+
+                }
+            ]
+        self.assertEqual(
+            data, result
+        )

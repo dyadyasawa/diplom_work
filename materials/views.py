@@ -24,7 +24,7 @@ class CourseListApiView(ListAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     pagination_class = CustomPagination
-    permission_classes = (IsAuthenticated, IsAdminUser, AllowAny,)
+    permission_classes = (IsAuthenticated, IsAdminUser,)
 
 
 class CourseCreateApiView(CreateAPIView):
@@ -98,6 +98,8 @@ class LessonDestroyApiView(DestroyAPIView):
 
 class SendContent(APIView):
     """ Отправка пользователю ссылки на выбранный урок по id урока и id пользователя. """
+
+    permission_classes = (IsAuthenticated, IsAdminUser,)
 
     def post(self, request, *args, **kwargs):
         lesson_pk = kwargs["lesson_pk"]

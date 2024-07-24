@@ -7,7 +7,7 @@ from knowledge_test.models import CourseTest, Question, Answer
 from knowledge_test.paginations import CustomPagination
 
 from knowledge_test.serializers import CourseTestSerializer, QuestionSerializer, AnswerSerializer
-from rest_framework.permissions import IsAdminUser
+from rest_framework.permissions import IsAdminUser, IsAuthenticated
 
 
 class CourseTestListApiView(ListAPIView):
@@ -16,7 +16,7 @@ class CourseTestListApiView(ListAPIView):
     serializer_class = CourseTestSerializer
     pagination_class = CustomPagination
     queryset = CourseTest.objects.all()
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAdminUser, IsAuthenticated,)
 
 
 class CourseTestDetailApiView(RetrieveAPIView):
@@ -24,7 +24,7 @@ class CourseTestDetailApiView(RetrieveAPIView):
 
     serializer_class = CourseTestSerializer
     queryset = CourseTest.objects.all()
-    permission_classes = (IsAdminUser,)
+    permission_classes = (IsAdminUser, IsAuthenticated)
 
 
 class CourseTestCreateApiView(CreateAPIView):
@@ -135,8 +135,11 @@ class AnswerDeleteApiView(DestroyAPIView):
 
 
 class GetQuestions(APIView):
+    """ Получение вопросов для теста по id теста. """
+
+    permission_classes = (IsAdminUser, IsAuthenticated,)
+
     def get(self, request, *args, **kwargs):
-        """ Получение вопросов для теста по id теста. """
 
         course_test = CourseTest.objects.get(pk=kwargs["course_pk"])
         questions_lst = course_test.question_set.all().values()
@@ -145,6 +148,8 @@ class GetQuestions(APIView):
 
 class GetAnswers(APIView):
     """ Получение ответов для теста по id вопроса. """
+
+    permission_classes = (IsAdminUser,)
 
     def get(self, request, *args, **kwargs):
         question = Question.objects.get(pk=kwargs["question_pk"])
@@ -155,6 +160,8 @@ class GetAnswers(APIView):
 class GetAnswersCQ(APIView):
     def get(self, request, *args, **kwargs):
         """ Получение ответов для теста по id теста и id вопроса. """
+
+        permission_classes = (IsAdminUser,)
 
         course_pk = kwargs["course_pk"]
         print(course_pk)
@@ -173,6 +180,8 @@ class GetAnswersCQ(APIView):
 class GetIsCorrectAnswer(APIView):
     """ Получение правильного ответа по id вопроса. """
 
+    permission_classes = (IsAdminUser,)
+
     def get(self, request, *args, **kwargs):
         question = Question.objects.get(pk=kwargs["question_pk"])
         answer_lst = question.answer_set.filter(is_correct=True).values()
@@ -181,6 +190,8 @@ class GetIsCorrectAnswer(APIView):
 
 class AnswerVerification(APIView):
     """ Проверка правильности ответа по id вопроса и id ответа. """
+
+    permission_classes = (IsAdminUser,IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
         question_pk = kwargs["question_pk"]

@@ -172,8 +172,9 @@ class GetAnswers(APIView):
 
 
 class GetAnswersCQ(APIView):
+    """Получение ответов для теста по id теста и id вопроса."""
+
     def get(self, request, *args, **kwargs):
-        """Получение ответов для теста по id теста и id вопроса."""
 
         permission_classes = (IsAdminUser,)
 

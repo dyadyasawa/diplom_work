@@ -12,6 +12,7 @@ from materials.views import (
     LessonDetailApiView,
     LessonListApiView,
     LessonUpdateApiView,
+    GetLessonsList,
     SendContent,
 )
 
@@ -39,6 +40,9 @@ urlpatterns = [
     ),
     path(
         "lesson/delete/<int:pk>/", LessonDestroyApiView.as_view(), name="lesson_delete"
+    ),
+    path(
+        "lessons_of_course/<int:course_pk>/", GetLessonsList.as_view(), name="lessons_of_course"
     ),
     path(
         "send/content/<int:lesson_pk>/<int:user_pk>/",

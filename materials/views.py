@@ -107,6 +107,21 @@ class LessonDestroyApiView(DestroyAPIView):
     queryset = Lesson.objects.all()
 
 
+class GetLessonsList(APIView):
+    """ Получение списка уроков по id курса. """
+
+    def get(self, request, *args, **kwargs):
+
+        permission_classes = (IsAdminUser, IsAuthenticated,)
+
+        course_pk = kwargs["course_pk"]
+        lessons = Lesson.objects.filter(course=course_pk).values()
+
+        return Response({"Темы доступных уроков": list(lessons)})
+
+
+
+
 class SendContent(APIView):
     """Отправка пользователю ссылки на выбранный урок по id урока и id пользователя."""
 

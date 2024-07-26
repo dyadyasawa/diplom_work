@@ -10,7 +10,7 @@ class Course(models.Model):
         upload_to="materials/courses", verbose_name="Превью", **NULLABLE
     )
     last_update_date = models.DateTimeField(
-        **NULLABLE, verbose_name="Дата последнего обновления"
+        auto_now=True, **NULLABLE, verbose_name="Дата последнего обновления"
     )
 
     class Meta:
